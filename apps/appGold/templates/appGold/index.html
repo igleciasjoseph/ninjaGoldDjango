@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'appGold/css/style.css' %}">
+</head>
+<body>
+    <div id='wrapper'>
+        <div id='goldamount'>
+            <p>Your Gold: <span>{{ request.session.totalgold }}</span></p>
+        </div>
+        <div id='box'>
+            <h1>Farm</h1>
+            <p>(earns 10-20 gold)</p>
+            <form action="/process_money" method="POST">
+            {% csrf_token %}
+                <input type="hidden" name="location" value="farm">
+                <input type="submit" value="Find Gold!" name="farm">
+            </form>
+        </div>
+        <div id='box'>
+            <h1>Cave</h1>
+            <p>(earns 5-10 gold)</p>
+            <form action="/process_money" method="POST">
+            {% csrf_token %}
+                <input type="hidden" name="location" value="cave">
+                <input type="submit" value="Find Gold!" name="cave">
+            </form>
+        </div>
+        <div id='box'>
+            <h1>House</h1>
+            <p>(earns 2-5 gold)</p>
+            <form action="/process_money" method="POST">
+            {% csrf_token %}
+                <input type="hidden" name="location" value="house">
+                <input type="submit" value="Find Gold!" name="house">
+            </form>
+        </div>
+        <div id='box'>
+            <h1>Casino</h1>
+            <p>(earns 0-50 gold)</p>
+            <form action="/process_money" method="POST">
+            {% csrf_token %}
+                <input type="hidden" name="location" value="casino">
+                <input type="submit" value="Find Gold!" name="casino">
+            </form>
+        </div>
+        <div id='textbox'>
+            <p>Activities:</p>
+            <div id='textarea'>
+                {%  for activities in request.session.activities %}
+                <p style='color: {{activities.color}};'>{{ activities.message }}</p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

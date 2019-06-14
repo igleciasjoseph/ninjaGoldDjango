@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+#wrapper {
+    margin: 0 auto;
+    width: 695px;
+    border: 1px solid black;
+    min-height: 200px;
+    padding: 20px;
+}
+
+#goldamount span{
+    border: 2px solid black;
+    display: inline-block;
+    width: 125px;
+    height: 25px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0px 10px; 
+}
+
+#box {
+    display: inline-block;
+    vertical-align: top;
+    border: 2px solid black;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    height: 125px;
+    width: 150px;
+}
+
+#box h1, #box p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+#textarea {
+    border: 2px solid black;
+    height: 100px;
+    width: 670px;
+    overflow: scroll;
+}
